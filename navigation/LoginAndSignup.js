@@ -23,11 +23,6 @@ const StackNavigator = () => (
     }}
   >
     <Stack.Screen
-      name="app"
-      component={AppTabNavigator}
-      options={{ headerShown: false }}
-    />
-    <Stack.Screen
       name="splash"
       component={Splash}
       options={{
@@ -43,6 +38,11 @@ const StackNavigator = () => (
       name="signup"
       component={SignUp}
       options={{ title: "sign up" }}
+    />
+    <Stack.Screen
+      name="app"
+      component={AppTabNavigator}
+      options={{ headerShown: false }}
     />
   </Stack.Navigator>
 );
