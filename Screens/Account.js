@@ -10,6 +10,7 @@ import { ScreenWrapper, UserProfile } from "../components";
 import { AccountMenuItem } from "../components/Account";
 import { Avatar, Badge } from "react-native-elements";
 import { contentWrapper } from "../styled/global";
+import { ScrollView } from "react-native-gesture-handler";
 
 const ACCOUNT_MENU_ITEMS = {
   ACCOUNT_UPGRADE: [
@@ -31,7 +32,7 @@ const ACCOUNT_MENU_ITEMS = {
 
 function Account({ navigation }) {
   const navigateToOptionPage = (pageName) => {
-    navigation.push(pageName);
+    navigation.navigate(pageName);
   };
 
   const keyExtractor = (item, index) => index.toString();
@@ -45,8 +46,8 @@ function Account({ navigation }) {
 
   return (
     <ScreenWrapper>
-      <UserProfile />
-      <View style={contentWrapper}>
+      <UserProfile navigation={navigation} />
+      <View style={[contentWrapper]}>
         <View style={{ paddingLeft: 20, marginBottom: 20 }}>
           <Text
             style={{
@@ -58,38 +59,41 @@ function Account({ navigation }) {
             Account
           </Text>
         </View>
-        <View style={{ paddingLeft: 20, marginBottom: 5 }}>
-          <Text style={{ fontSize: 16, fontWeight: "700" }}>
-            Upgrade Account
-          </Text>
-          <View>
-            <FlatList
-              renderItem={renderItem}
-              data={ACCOUNT_MENU_ITEMS.ACCOUNT_UPGRADE}
-              keyExtractor={keyExtractor}
-            />
+        <ScrollView style={{ marginVertical: 10 }}>
+          <View style={{ paddingLeft: 20, marginBottom: 5 }}>
+            <Text style={{ fontSize: 16, fontWeight: "700" }}>
+              Upgrade Account
+            </Text>
+            <View>
+              <FlatList
+                renderItem={renderItem}
+                data={ACCOUNT_MENU_ITEMS.ACCOUNT_UPGRADE}
+                keyExtractor={keyExtractor}
+              />
+            </View>
           </View>
-        </View>
-        <View style={{ paddingLeft: 20, marginTop: 10, marginBottom: 5 }}>
-          <Text style={{ fontSize: 16, fontWeight: "700" }}>Security</Text>
-          <View style={{ marginTop: 5 }}>
-            <FlatList
-              renderItem={renderItem}
-              data={ACCOUNT_MENU_ITEMS.SECURITY}
-              keyExtractor={keyExtractor}
-            />
+          <View style={{ paddingLeft: 20, marginTop: 10, marginBottom: 5 }}>
+            <Text style={{ fontSize: 16, fontWeight: "700" }}>Security</Text>
+            <View style={{ marginTop: 5 }}>
+              <FlatList
+                renderItem={renderItem}
+                data={ACCOUNT_MENU_ITEMS.SECURITY}
+                keyExtractor={keyExtractor}
+              />
+            </View>
           </View>
-        </View>
-        <View style={{ paddingLeft: 20, marginTop: 10 }}>
-          <Text style={{ fontSize: 16, fontWeight: "700" }}>Referrals</Text>
-          <View style={{ marginTop: 5 }}>
-            <FlatList
-              renderItem={renderItem}
-              data={ACCOUNT_MENU_ITEMS.REFERRALS}
-              keyExtractor={keyExtractor}
-            />
+          <View style={{ paddingLeft: 20, marginTop: 10 }}>
+            <Text style={{ fontSize: 16, fontWeight: "700" }}>Referrals</Text>
+            <View style={{ marginTop: 5 }}>
+              <FlatList
+                renderItem={renderItem}
+                data={ACCOUNT_MENU_ITEMS.REFERRALS}
+                keyExtractor={keyExtractor}
+              />
+            </View>
           </View>
-        </View>
+          <View style={{ padding: 20 }}></View>
+        </ScrollView>
       </View>
     </ScreenWrapper>
   );

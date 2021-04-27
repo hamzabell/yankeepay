@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { Avatar, Badge } from "react-native-elements";
 
-export default () => {
+export default ({ navigation }) => {
   return (
     <View
       style={{
@@ -33,7 +33,7 @@ export default () => {
           <Avatar
             rounded
             icon={{ name: "bell", type: "font-awesome", color: "#39AC8E" }}
-            onPress={() => console.log("Works!")}
+            onPress={() => navigation.navigate("Notifications")}
             containerStyle={{
               padding: 8,
               marginRight: 25,

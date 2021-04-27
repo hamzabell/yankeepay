@@ -1,7 +1,11 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Home, Stash, Swap, Share, Store, Account } from "../Screens";
 import AccountNavigation from "./AccoutNavigation";
+import SwapNavigation from "./SwapNavigation";
+import StashNavigation from "./StashNavigation";
+import ShareNavigation from "./ShareNavigation";
+import StoreNavigation from "./StoreNavigation";
+import HomeNavigation from "./HomeNavigation";
 import { FontAwesome5, FontAwesome } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 
@@ -35,7 +39,7 @@ const TabNavigator = () => (
   >
     <Tabs.Screen
       name="Home"
-      component={Home}
+      component={HomeNavigation}
       options={{
         tabBarIcon: ({ size, color }) => (
           <FontAwesome5 name="home" size={size} color={color} />
@@ -44,7 +48,7 @@ const TabNavigator = () => (
     />
     <Tabs.Screen
       name="Stash"
-      component={Stash}
+      component={StashNavigation}
       options={{
         tabBarIcon: ({ size, color }) => (
           <AntDesign name="Safety" size={size} color={color} />
@@ -53,7 +57,7 @@ const TabNavigator = () => (
     />
     <Tabs.Screen
       name="Swap"
-      component={Swap}
+      component={SwapNavigation}
       options={{
         tabBarIcon: ({ size, color }) => (
           <AntDesign name="swap" size={size} color={color} />
@@ -62,7 +66,7 @@ const TabNavigator = () => (
     />
     <Tabs.Screen
       name="Share"
-      component={Share}
+      component={ShareNavigation}
       options={{
         tabBarIcon: ({ size, color }) => (
           <FontAwesome5 name="expand-arrows-alt" size={size} color={color} />
@@ -71,7 +75,7 @@ const TabNavigator = () => (
     />
     <Tabs.Screen
       name="Store"
-      component={Store}
+      component={StoreNavigation}
       options={{
         tabBarIcon: ({ size, color }) => (
           <FontAwesome name="shopping-bag" size={size} color={color} />

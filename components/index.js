@@ -7,6 +7,7 @@ import AppForm from "./AppForm";
 import UserProfile from "./UserProfile";
 import CardTitle from "./CardTitle";
 import CurrencyCard from "./CurrrencyCard";
+import AppDropdown from "./AppDropdown";
 
 export {
   AppButton,
@@ -18,4 +19,5 @@ export {
   UserProfile,
   CardTitle,
   CurrencyCard,
+  AppDropdown,
 };

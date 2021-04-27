@@ -3,7 +3,7 @@ import { View, Text } from "react-native";
 import { ScreenWrapper, CardTitle, CurrencyCard } from "../components";
 import { contentWrapper } from "../styled/global";
 
-function Share(props) {
+function Share({ navigation }) {
   return (
     <ScreenWrapper>
       <View style={{ marginVertical: 30 }}></View>
@@ -15,28 +15,36 @@ function Share(props) {
           balance="10,000"
           rate="2.01"
           rateDirection="down"
-          onPress={() => console.log("I love Jesus")}
+          onPress={() =>
+            navigation.navigate("Share Dashboard", { currency: "Naira" })
+          }
         />
         <CurrencyCard
           title="Btc"
           balance="4,000"
           rate="2.01"
           rateDirection="up"
-          onPress={() => console.log("I love Jesus")}
+          onPress={() =>
+            navigation.navigate("Share Dashboard", { currency: "Btc" })
+          }
         />
         <CurrencyCard
           title="Ethereum"
           balance="0.9977"
           rate="2.01"
           rateDirection="down"
-          onPress={() => console.log("I love Jesus")}
+          onPress={() =>
+            navigation.navigate("Share Dashboard", { currency: "Ethereum" })
+          }
         />
         <CurrencyCard
           title="Usdt"
           balance="4.677777"
           rate="2.01"
           rateDirection="up"
-          onPress={() => console.log("I love Jesus")}
+          onPress={() =>
+            navigation.navigate("Share Dashboard", { currency: "Usdt" })
+          }
         />
       </View>
     </ScreenWrapper>

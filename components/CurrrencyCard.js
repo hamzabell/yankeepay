@@ -2,17 +2,11 @@ import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { ListItem, Avatar } from "react-native-elements";
 import PropTypes from "prop-types";
-
-const currencyIcons = {
-  Naira: require("../assets/naira.png"),
-  Usdt: require("../assets/usdt.png"),
-  Btc: require("../assets/btc.png"),
-  Ethereum: require("../assets/ethereum.png"),
-};
+import currencyIcons from "../shared/CurrencyIcons";
 
 const CurrencyCard = ({ title, balance, rate, rateDirection, onPress }) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={onPress}>
       <ListItem style={{ marginHorizontal: 20, marginVertical: 10 }}>
         <Avatar source={currencyIcons[title]} />
         <ListItem.Content>

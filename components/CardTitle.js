@@ -26,7 +26,7 @@ const CardTitle = ({ title, balance }) => {
       <View style={{ flexDirection: "row", marginTop: 2 }}>
         <Image
           source={require("../assets/naira-sign.png")}
-          style={{ height: 20, width: 20, marginTop: 12, marginRight: 2 }}
+          style={{ height: 20, width: 20, marginRight: 2, marginTop: 6 }}
         />
         <Text
           style={{

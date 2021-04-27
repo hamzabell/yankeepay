@@ -10,6 +10,7 @@ import {
   SubmitID,
 } from "../Screens/AccountScreens";
 import { Account } from "../Screens";
+import Notifications from "../Screens/Notifications";
 
 const Stack = createStackNavigator();
 
@@ -60,6 +61,11 @@ const StackNavigator = () => (
     <Stack.Screen
       name="referral dashboard"
       component={ReferralDashboard}
+      options={{ headerTitle: "" }}
+    />
+    <Stack.Screen
+      name="Notifications"
+      component={Notifications}
       options={{ headerTitle: "" }}
     />
   </Stack.Navigator>

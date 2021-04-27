@@ -110,7 +110,7 @@ function Home({ navigation }) {
   );
   return (
     <ScreenWrapper>
-      <UserProfile />
+      <UserProfile navigation={navigation} />
       <View
         style={{
           justifyContent: "center",
